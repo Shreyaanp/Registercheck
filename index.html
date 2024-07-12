@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple E-commerce Registration</title>
+    <title>E-commerce Registration</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,7 +19,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 400px;
         }
         h1 {
             text-align: center;
@@ -84,10 +84,14 @@
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 
+        // Simulate a dynamic ID change by appending a random number
+        var dynamicId = 'message-' + Math.floor(Math.random() * 1000);
+        document.getElementById('message').id = dynamicId;
+
         if(name && email && password) {
-            document.getElementById('message').textContent = 'Registration successful! Welcome, ' + name + '!';
+            document.getElementById(dynamicId).textContent = 'Registration successful! Welcome, ' + name + '!';
         } else {
-            document.getElementById('message').textContent = 'Please fill out all fields.';
+            document.getElementById(dynamicId).textContent = 'Please fill out all fields.';
         }
     });
 </script>
